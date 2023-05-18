@@ -4,6 +4,7 @@ import backend_center.plugins.*
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.tomcat.*
+import org.apache.catalina.startup.Tomcat
 
 fun main() {
     embeddedServer(Tomcat, port = 8080, host = "0.0.0.0", module = Application::module)
