@@ -32,6 +32,11 @@ class ApplicationTest {
 
     @Test
     fun conditionExpression() {
+        val a: String = "1"
+        val testList = listOf("1", "2", "3")
+        if (a in testList) {
+            println("yeah")
+        }
         println(add(2, 4))
     }
 }
