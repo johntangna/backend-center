@@ -1,5 +1,7 @@
 package backend_center
 
+import backend_center.service.ProgramZipFileService
+import backend_center.service.impl.ProgramZipFileServiceImpl
 import io.ktor.client.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -7,6 +9,8 @@ import org.junit.Test
 import java.lang.Integer.parseInt
 
 class TestClass {
+
+    private val programZipFileService: ProgramZipFileService = ProgramZipFileServiceImpl()
 
     @Test
     fun testCreateClass() {
@@ -145,6 +149,11 @@ class TestClass {
     @Test
     fun testRate() {
         println(50 / 3)
+    }
+
+    @Test
+    fun testUnZipFile() {
+        programZipFileService.unZipFile("G:\\1.zip", "G:\\1")
     }
 
 }
