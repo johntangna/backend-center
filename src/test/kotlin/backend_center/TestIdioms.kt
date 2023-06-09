@@ -7,9 +7,11 @@ class TestIdioms {
     fun testDefault(name: String = "", email: String = "") {
 
     }
+
     fun testDefault2(age: Int, useKey: Boolean) {
 
     }
+
     @Test
     fun testOne() {
         val list = listOf<String>("a", "ab", "c")
@@ -34,9 +36,9 @@ class TestIdioms {
     @Test
     fun testPredicates() {
         val variable = listOf("asfe", "foure")
-        val noneCheck = variable.none{ it.endsWith("e") }
-        val anyCheck = variable.any{ it.endsWith("e") }
-        val allCheck = variable.all{ it.endsWith("e") }
+        val noneCheck = variable.none { it.endsWith("e") }
+        val anyCheck = variable.any { it.endsWith("e") }
+        val allCheck = variable.all { it.endsWith("e") }
         println(noneCheck)
         println(anyCheck)
         println(allCheck)
@@ -54,5 +56,25 @@ class TestIdioms {
     }
 
     @Test
-    fun
+    fun testJoinString() {
+        val numbers = listOf(1, 2, 3, 4, 5, 6)
+        println(numbers.filter {
+            it % 2 != 0
+        }.joinToString("; ") { "${-it}" })
+
+    }
+
+    fun topLevelWhen(obj: Any) {
+        when(obj) {
+            2 -> println(2)
+            is String -> println("is customerTest")
+            is Int -> println("is testClass")
+        }
+    }
+
+    @Test
+    fun testWhen() {
+        val customerName: CustomerTest = CustomerTest()
+        this.topLevelWhen(2)
+    }
 }
