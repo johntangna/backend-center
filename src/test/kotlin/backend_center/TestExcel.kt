@@ -7,6 +7,6 @@ class TestExcel {
 
     @Test
     fun testExcelUtils() {
-        ExcelUtils.handleExcel("G:\\excel\\期末考试统计表(1).xlsx")
+        ExcelUtils.loopBatchHandleExcel("G:\\excel\\期末考试统计表(1).xlsx")
     }
 }
